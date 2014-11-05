@@ -7,7 +7,7 @@ class Grandparent
 			@age = age
 			@gender = gender
 			@@family << self
-			@@grandchildren +=1
+			# @@grandchildren +=1
 		end
 	def self.family
 		@@family
