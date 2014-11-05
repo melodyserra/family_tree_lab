@@ -1,6 +1,13 @@
 require_relative 'grandparent'
 
-class Parent
+@@children = 0
 
+class Parent < Grandparent
+		def initialize(name, age, gender)
+		super(name, age, gender)
+		@@family << self
+		end
+	def self.children
+		@@children
+	end
 end
-

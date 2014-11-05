@@ -9,38 +9,39 @@ describe Grandparent do
 
   describe "Initialization" do
     it "is an instance of the Grandparent class" do
-
+      expect(@grandparent).to be_instance_of(Grandparent)
     end
     it "is assigned a name" do
-
+      expect(@grandparent.name).to eq("marcia")
     end
     it "is assigned an age" do
-
+       expect(@grandparent.age).to eq(60)
     end
     it "is assigned a gender" do
-
+      expect(@grandparent.gender).to eq("female")
     end
   end
 
   describe "class methods" do
     it "should have a way to access the family variable" do
-
+      #initialize parent or child
+      expect(Grandparent.showFamily).to include({:name => "marcia", :age => 60, :relation => "Grandparent"}) 
+      # expect(Grandparent.showFamily.size).to eq(1)
     end
     it "should have a way to access the grandchildren" do
-
+      expect(Grandparent.grandchildren).to eq(1)
     end
   end
 
   describe "Adding to the family" do
     it "gets added to the family" do
-
-
+       expect(Grandparent.family.empty?).to be(false)
     end
   end
 
   describe "Show family" do
     it "Should return an array" do
-
+      expect(Grandparent.showFamily.class).to be(Array)
     end
 
     # BONUS
